@@ -6,7 +6,9 @@
                         class="all-todo__item-complete">
                         Complete
                 </button>
+
                 {{todo.body}}
+
                 <div class="all-todo__item-btns">
                     <button @click="edit(todo)"
                             class="todo-edit">
@@ -37,9 +39,9 @@
       }
     },
     computed: {
-      todos() {
-        retirn this.$store.getetrs.todos
-      }
+      todos(){
+            return this.$store.getters.todos
+        }
     }
   }
 </script>

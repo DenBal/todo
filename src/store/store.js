@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-Vue.use(vuex);
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
@@ -57,6 +57,7 @@ export default new Vuex.Store({
   },
   getters: {
     newTodo: state => state.newTodo,
-    todos: state => state.todos.filter((todo) => return !todo.completed)
-  }
+    todos: state => state.todos.filter((todo) => {return !todo.completed}),
+    completedTodos: state => state.todos.filter((todo) => {return todo.completed})
+    }
 })

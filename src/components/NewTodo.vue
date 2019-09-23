@@ -1,9 +1,9 @@
 <template>
   <div id="new-todo" class="new-todo">
-    <imput class="new-todo__text"
+    <input class="new-todo__text"
            :value="newTodo"
            @change="getTodo"
-           placeholder="Новое задание">
+           placeholder="Новое задание" />
 
     <button class="new-todo__btn" @click="addTodo">
       Добавить
@@ -16,7 +16,7 @@
     methods: {
       getTodo(e) {
         this.$store.dispatch('getTodo', e.target.value)
-      }
+      },
       addTodo() {
         this.$store.dispatch('addTodo');
         this.$store.dispatch('clearTodo');

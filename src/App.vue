@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <AllTodo></AllTodo>
     <NewTodo></NewTodo>
+    <AllTodo></AllTodo>
   </div>
 </template>
 
 <script>
-import NewTodo from './components/new-todo.vue'
-import AllTodo from './components/all-todo.vue'
+import NewTodo from './components/NewTodo.vue'
+import AllTodo from './components/AllTodo.vue'
 
 export default {
   components: {
@@ -16,7 +16,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
