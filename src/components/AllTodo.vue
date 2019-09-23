@@ -1,15 +1,15 @@
 <template>
-    <div id="all-todo" class="all-todo">
-        <div class="all-todo__container">
-            <div class="all-todo__item" v-for="todo in todos">
+    <div id="all-todo" class="todos-list">
+        <div class="todos-list__container">
+            <div class="todos-list__item" v-for="todo in todos">
                 <button @click="complete(todo)"
-                        class="all-todo__item-complete">
+                        class="todos-list__item-complete">
                         Complete
                 </button>
 
                 {{todo.body}}
 
-                <div class="all-todo__item-btns">
+                <div class="todos-list__item-btns">
                     <button @click="edit(todo)"
                             class="todo-edit">
                             Edit

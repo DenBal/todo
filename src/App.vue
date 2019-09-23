@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-    <NewTodo></NewTodo>
     <AllTodo></AllTodo>
+    <NewTodo></NewTodo>
+    <CompleteTodo></CompleteTodo>
   </div>
 </template>
 
 <script>
 import NewTodo from './components/NewTodo.vue'
 import AllTodo from './components/AllTodo.vue'
+import CompleteTodo from './components/CompleteTodo.vue'
 
 export default {
   components: {
     NewTodo,
-    AllTodo
+    AllTodo,
+    CompleteTodo
   }
 }
 </script>
