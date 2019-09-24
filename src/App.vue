@@ -2,26 +2,21 @@
   <div id="app" class="todo">
     <div class="todo__block">
       <div class="todo__block-navigation">
-        <div>Задания</div>
-        <div>Выполненные</div>
+        <router-link to="/">Задания</router-link>
+        <router-link to="/completed">Выполненные</router-link>
       </div>
       <NewTodo></NewTodo>
-      <AllTodo></AllTodo>
-      <CompleteTodo></CompleteTodo>
+       <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
 import NewTodo from './components/NewTodo.vue'
-import AllTodo from './components/AllTodo.vue'
-import CompleteTodo from './components/CompleteTodo.vue'
 
 export default {
   components: {
-    NewTodo,
-    AllTodo,
-    CompleteTodo
+    NewTodo
   }
 }
 </script>
@@ -54,5 +49,3 @@ export default {
     display: -webkit-flex;
   }
 </style>
-
-

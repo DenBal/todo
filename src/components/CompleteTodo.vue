@@ -1,6 +1,6 @@
 <template>
     <div id="completed-todos" class="todos-list">
-       <div class="todos-list__item" v-for="todo in completed">
+       <div class="todos-list__item" v-for="todo in completed" v-bind:key="todo.body">
           {{todo.body}}
           <div class="todos-list__item-btns">
               <button @click="remove(todo)"
