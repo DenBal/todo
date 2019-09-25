@@ -2,11 +2,13 @@
   <div id="app" class="todo">
     <div class="todo__block">
       <div class="todo__block-navigation">
-        <router-link to="/">Задания</router-link>
+        <router-link to="/">Активные</router-link>
         <router-link to="/completed">Выполненные</router-link>
       </div>
-      <NewTodo></NewTodo>
-       <router-view></router-view>
+      <div class="todo__block-content">
+         <NewTodo></NewTodo>
+         <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
@@ -21,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
   .todo {
     width: 100%;
     height: 100%;
@@ -34,19 +36,63 @@ export default {
     -webkit-justify-content: center;
     aloign-items: center;
     -webkit-align-items: center;
-  }
 
-  .todo__block {
-    width: 60%;
-    max-width: 750px;
-    min-height: 600px;
-    background: #e2e2e2;
-    border-radius: 5px;
-    padding: 20px;
-  }
+    &__block {
+       width: 98%;
+       max-width: 750px;
 
-  .todo__block-navigation {
-    display: flex;
-    display: -webkit-flex;
+      &-navigation {
+        display: flex;
+        display: -webkit-flex;
+
+        a {
+          background: #fff;
+          padding: 20px;
+          color: #e2e2e2;
+          font-size: 1.25rem;
+          text-decoration: none;
+          border-top: 2px solid #f0f0f0;
+          border-right: 1px solid #f0f0f0;
+          font-family: 'Roboto';
+          font-weight: 300;
+          transition: all .3s;
+
+          &.router-link-exact-active {
+            background: #e2e2e2;
+            border: 0;
+            border-top: 2px solid #999;
+            color: #202020;
+
+            &:hover,
+            &:focus {
+              color: #202020;
+              border-right: 1px solid #f0f0f0;
+              transition: all .3s;
+            }
+          }
+
+          &:hover,
+          &:focus {
+            color: #999;
+            border-top: 2px solid #999;
+            border-right: 1px solid #999;
+            transition: all .3s;
+          }
+        }
+      }
+
+      &-content {
+        background: #e2e2e2;
+        padding: 20px;
+        min-height: 600px;
+        position: relative;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+      }
+    }
   }
 </style>

@@ -33,6 +33,7 @@
 </template>
 
 <script>
+  import _ from 'lodash'
   export default {
     data() {
       return {
@@ -70,7 +71,9 @@
         return this.$store.getters.todos
       },
       displayedTodos() {
-        return this.paginate(this.$store.getters.todos)
+        let tasksOnPage = this.$store.getters.todos
+        tasksOnPage = _.orderBy(tasksOnPage, 'id', 'desc');
+        return this.paginate(tasksOnPage)
       }
     },
     created() {
@@ -82,7 +85,6 @@
 <style lang="scss">
     .todos-list {
         padding: 20px 0 40px 0;
-        position: relative;
         height: 100%;
 
         &__item {
@@ -127,7 +129,7 @@
         &__pages {
           position: absolute;
           width: 100%;
-          bottom: 0;
+          bottom: 20px;
           display: flex;
           display: -webkit-flex;
           justify-content: center;
@@ -142,6 +144,7 @@
             border: 0;
             border-bottom: 2px solid #999;
             border-right: 2px solid #999;
+            margin: 0 5px;
           }
         }
     }
