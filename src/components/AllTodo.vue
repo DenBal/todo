@@ -63,7 +63,7 @@
         for (let index = 1; index <= numberOfPages; index++) {
           this.pages.push(index)
         }
-      }
+      },
     },
     computed: {
       todos() {
