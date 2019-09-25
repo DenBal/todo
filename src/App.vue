@@ -39,6 +39,7 @@ export default {
   .todo__block {
     width: 60%;
     max-width: 750px;
+    min-height: 600px;
     background: #e2e2e2;
     border-radius: 5px;
     padding: 20px;
