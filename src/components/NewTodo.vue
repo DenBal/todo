@@ -13,7 +13,9 @@
         </button>
       </div>
 
-    <button class="new-todo__btn full-width" @click="show" v-bind:class="{ hide: hideAddBtn }">
+    <button class="new-todo__btn full-width"
+            @click="show"
+            v-bind:class="{ hide: hideAddBtn }">
       Новое задание
     </button>
   </div>

@@ -6,29 +6,29 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     todos: [
-      { "body": "Задача 1", "id": 1 },
-      { "body": "Задача 2", "id": 2 },
-      { "body": "Задача 3", "id": 3 },
-      { "body": "Задача 4", "id": 4 },
-      { "body": "Задача 5", "id": 5 },
-      { "body": "Задача 6", "id": 6 },
-      { "body": "Задача 7", "id": 7 },
-      { "body": "Задача 8", "id": 8 },
-      { "body": "Задача 9", "id": 9 },
-      { "body": "Задача 10", "id": 10 },
-      { "body": "Задача 11", "id": 11 },
-      { "body": "Задача 12", "id": 12 },
-      { "body": "Задача 13", "id": 13 },
-      { "body": "Задача 14", "id": 14 },
-      { "body": "Задача 15", "id": 15 },
-      { "body": "Задача 16", "id": 16 },
-      { "body": "Задача 17", "id": 17 },
-      { "body": "Задача 18", "id": 18 },
-      { "body": "Задача 19", "id": 19 },
-      { "body": "Задача 20", "id": 20 },
-      { "body": "Задача 21", "id": 21 },
-      { "body": "Задача 22", "id": 22 },
-      { "body": "Задача 23", "id": 23 }
+      { "body": "Задача 1", "id": 1, "completed": false },
+      { "body": "Задача 2", "id": 2, "completed": false },
+      { "body": "Задача 3", "id": 3, "completed": false },
+      { "body": "Задача 4", "id": 4, "completed": false },
+      { "body": "Задача 5", "id": 5, "completed": false },
+      { "body": "Задача 6", "id": 6, "completed": false },
+      { "body": "Задача 7", "id": 7, "completed": false },
+      { "body": "Задача 8", "id": 8, "completed": false },
+      { "body": "Задача 9", "id": 9, "completed": false },
+      { "body": "Задача 10", "id": 10, "completed": false },
+      { "body": "Задача 11", "id": 11, "completed": false },
+      { "body": "Задача 12", "id": 12, "completed": false },
+      { "body": "Задача 13", "id": 13, "completed": false },
+      { "body": "Задача 14", "id": 14, "completed": false },
+      { "body": "Задача 15", "id": 15, "completed": false },
+      { "body": "Задача 16", "id": 16, "completed": false },
+      { "body": "Задача 17", "id": 17, "completed": false },
+      { "body": "Задача 18", "id": 18, "completed": false },
+      { "body": "Задача 19", "id": 19, "completed": false },
+      { "body": "Задача 20", "id": 20, "completed": false },
+      { "body": "Задача 21", "id": 21, "completed": false },
+      { "body": "Задача 22", "id": 22, "completed": false },
+      { "body": "Задача 23", "id": 23, "completed": false }
     ],
     newTodo: ''
   },
@@ -52,8 +52,8 @@ export default new Vuex.Store({
       var todos = state.todos
       todos.splice(todos.indexOf(todo), 1)
     },
-    COMPLETE_TODO(state, todo) {
-      todo.completed = !todo.completed
+    COMPLETE_TODO(state, todo){
+     todo.completed = !todo.completed
     },
     CLEAR_TODO(state) {
       state.newTodo = ''
@@ -72,9 +72,9 @@ export default new Vuex.Store({
     removeTodo({commit}, todo) {
       commit('REMOVE_TODO', todo)
     },
-    completeTodo({commit}, todo) {
+    completeTodo({commit}, todo){
       commit('COMPLETE_TODO', todo)
-    },
+     },
     clearTodo({commit}) {
       commit('CLEAR_TODO')
     }

@@ -11,10 +11,10 @@
                           <i class="fas fa-check"></i>
                     </button>
 
-                    <button @click="edit(todo)"
+                    <!-- <button @click="edit(todo)"
                             class="todo-edit">
                             <i class="fas fa-pencil-alt"></i>
-                    </button>
+                    </button> -->
 
                     <button @click="remove(todo)"
                             class="todo-remove">
@@ -107,6 +107,7 @@
 
             &-btns {
               min-width: 75px;
+              text-align: right;
               button {
                 border: 0;
                 background: transparent;
