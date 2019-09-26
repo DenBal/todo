@@ -1,9 +1,9 @@
 <template>
     <div id="all-todo" class="todos-list">
         <div class="todos-list__container">
-            <div class="todos-list__item" v-for="(todo, index) in displayedTodos" :key="todo.body">
+            <div class="todos-list__item" v-for="todo in displayedTodos" :key="todo.body">
 
-                {{ index + 1}}) {{ todo.body }}
+                {{ todo.body }}
 
                 <div class="todos-list__item-btns">
                     <button @click="complete(todo)"
@@ -106,6 +106,7 @@
             -webkit-justify-content: space-between;
 
             &-btns {
+              min-width: 75px;
               button {
                 border: 0;
                 background: transparent;

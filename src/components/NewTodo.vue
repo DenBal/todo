@@ -1,26 +1,51 @@
 <template>
   <div id="new-todo" class="new-todo">
-    <textarea class="new-todo__text"
-           :value="newTodo"
-           @change="getTodo"
-           placeholder="Новое задание" >
-    </textarea>
+      <div class="new-todo__block" v-bind:class="{ active: openTextarea }">
+        <textarea class="new-todo__text"
+               :value="newTodo"
+               v-bind:class="{error: error}"
+               @change="getTodo"
+               placeholder="Новое задание" >
+        </textarea>
 
-    <button class="new-todo__btn" @click="addTodo">
-      Добавить
+        <button class="new-todo__btn" @click="addTodo">
+          Добавить
+        </button>
+      </div>
+
+    <button class="new-todo__btn full-width" @click="show" v-bind:class="{ hide: hideAddBtn }">
+      Новое задание
     </button>
   </div>
 </template>
 
 <script>
   export default {
+    data() {
+      return {
+        openTextarea: false,
+        hideAddBtn: false,
+        error: false
+      }
+    },
     methods: {
       getTodo(e) {
-        this.$store.dispatch('getTodo', e.target.value)
+        if(e.target.value) {
+          this.$store.dispatch('getTodo', e.target.value)
+          this.error = false
+        } else {
+          this.error = true
+        }
       },
       addTodo() {
-        this.$store.dispatch('addTodo');
-        this.$store.dispatch('clearTodo');
+        this.$store.dispatch('addTodo')
+        this.$store.dispatch('clearTodo')
+        this.openTextarea = false
+        this.hideAddBtn = false
+      },
+      show() {
+        this.openTextarea = true
+        this.hideAddBtn = true
       }
     },
     computed: {
@@ -33,6 +58,15 @@
 
 <style lang="scss">
    .new-todo {
+
+     &__block {
+       display: none;
+
+       &.active {
+         display: block;
+       }
+     }
+
      &__text {
        width: 100%;
        box-sizing: border-box;
@@ -42,7 +76,7 @@
        font-family: 'Roboto';
        font-size: 1rem;
        font-weight: 300;
-       border: 0;
+       border: 1px solid transparent;
        border-radius: 3px;
        height: 100px;
        overflow: hidden;
@@ -55,6 +89,11 @@
        &:active,
        &:focus {
          outline: none;
+       }
+
+       &.error {
+         border: 1px solid #ff0000;
+         transition: all .3s;
        }
      }
 
@@ -71,10 +110,26 @@
        border-bottom: 2px solid #6a8a6a;
        border-right: 2px solid #6a8a6a;
        border-radius: 3px;
+       transition: all .3s;
 
        &:active,
        &:focus {
          outline: none;
+       }
+
+       &:hover {
+         cursor: pointer;
+         background: darken(#8fbc8f, 10%);
+         transition: all .3s;
+       }
+
+       &.hide {
+         display: none;
+       }
+
+       &.full-width {
+         width: auto;
+         padding: 0 20px;
        }
      }
    }

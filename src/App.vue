@@ -53,6 +53,7 @@ export default {
           text-decoration: none;
           border-top: 2px solid #f0f0f0;
           border-right: 1px solid #f0f0f0;
+          border-left: 1px solid #f0f0f0;
           font-family: 'Roboto';
           font-weight: 300;
           transition: all .3s;
@@ -67,6 +68,7 @@ export default {
             &:focus {
               color: #202020;
               border-right: 1px solid #f0f0f0;
+              border-left: 1px solid #f0f0f0;
               transition: all .3s;
             }
           }
@@ -76,6 +78,7 @@ export default {
             color: #999;
             border-top: 2px solid #999;
             border-right: 1px solid #999;
+            border-left: 1px solid #999;
             transition: all .3s;
           }
         }
