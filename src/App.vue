@@ -81,6 +81,10 @@ export default {
             border-left: 1px solid #999;
             transition: all .3s;
           }
+
+          @media (max-width: 450px) {
+            font-size: 1.1rem;
+          }
         }
       }
 

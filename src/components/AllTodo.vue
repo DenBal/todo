@@ -147,6 +147,18 @@
             border-bottom: 2px solid #999;
             border-right: 2px solid #999;
             margin: 0 5px;
+            transition: all .5s;
+
+              &:hover {
+                  opacity: .75;
+                  transition: all .3s;
+              }
+
+              &.active {
+                  border-bottom: 2px solid #6a8a6a;
+                  border-right: 2px solid #6a8a6a;
+                  color: #fff;
+              }
           }
         }
     }
